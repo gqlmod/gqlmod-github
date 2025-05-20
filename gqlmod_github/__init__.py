@@ -77,7 +77,7 @@ class GitHubProvider(HttpxProvider):
     # This can't be async
     def get_schema_str(self):
         # TODO: Caching?
-        resp = self.session_sync.get("https://docs.github.com/public/schema.docs.graphql")
+        resp = self.session_sync.get("https://docs.github.com/public/fpt/schema.docs.graphql")
         return resp.text
 
     def codegen_extra_kwargs(self, gast, schema):
